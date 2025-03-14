@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  landing-members:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-03-14T13:45:41.024827982Z"
+    description: A Helm chart for colibrie's landing-members process
+    digest: d1d48ea1e8e5a13aa1747eb025b048f3d7759e82ec9b1dd5460286065a2c8dc0
+    name: landing-members
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/landing-members-0.1.0/landing-members-0.1.0.tgz
+    version: 0.1.0
   onboarding:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/onboarding-0.1.0/onboarding-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-14T08:11:43.376101419Z"
+generated: "2025-03-14T13:45:41.024834044Z"
