@@ -1,6 +1,6 @@
 apiVersion: v2
 name: onboarding
-description: A Helm chart for Kubernetes
+description: A Helm chart for colibrie's onboarding process
 
 # A chart can be either an 'application' or a 'library' chart.
 #
