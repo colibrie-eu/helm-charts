@@ -52,6 +52,17 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/onboarding-0.1.0/onboarding-0.1.0.tgz
     version: 0.1.0
+  remix:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2025-03-16T19:26:47.171789108Z"
+    description: A Helm chart for colibire's remix website
+    digest: caf9f90e74d87acf1339a44f505c151bbee2cb216606f41cc235838f4207452a
+    name: remix
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/remix-0.1.0/remix-0.1.0.tgz
+    version: 0.1.0
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.33.2-alpine
@@ -63,4 +74,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-16T17:29:25.642027503Z"
+generated: "2025-03-16T19:26:47.171804757Z"
