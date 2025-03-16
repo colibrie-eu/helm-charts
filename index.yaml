@@ -55,6 +55,16 @@ entries:
   remix:
   - apiVersion: v2
     appVersion: 0.1.1
+    created: "2025-03-16T19:46:06.478284429Z"
+    description: A Helm chart for colibire's remix website
+    digest: 9cb7617a1fc263366edfcbacdb2c8f567832c70ec6071fcac3213fa9d4ad769c
+    name: remix
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/remix-0.2.0/remix-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 0.1.1
     created: "2025-03-16T19:26:47.171789108Z"
     description: A Helm chart for colibire's remix website
     digest: caf9f90e74d87acf1339a44f505c151bbee2cb216606f41cc235838f4207452a
@@ -74,4 +84,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-16T19:26:47.171804757Z"
+generated: "2025-03-16T19:46:06.478324574Z"
