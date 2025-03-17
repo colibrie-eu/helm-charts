@@ -14,13 +14,13 @@ image:
   tag: ""
 
 env:
-  DOMAIN: ""
-  SMTP_HOST: ""
-  SMTP_FROM: ""
-  SMTP_PORT: ""
-  SMTP_SECURITY: ""
-  SMTP_USERNAME: ""
-  SMTP_PASSWORD: ""
+  DOMAIN: "https://vault.example.com"
+  SMTP_HOST: smtp.gmail.com
+  SMTP_FROM: no-reply@example.com
+  SMTP_PORT: "\"587\""
+  SMTP_SECURITY: force_tls
+  SMTP_USERNAME: no-reply@example.com
+  SMTP_PASSWORD: passw0rd
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
