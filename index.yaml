@@ -33,6 +33,16 @@ entries:
     version: 0.1.0
   onboarding:
   - apiVersion: v2
+    appVersion: 0.5.0
+    created: "2025-03-17T09:40:03.54694116Z"
+    description: A Helm chart for colibrie's onboarding process
+    digest: 4637bb354451955db897b50400a0ee17c7a5c005e13ce5b2b9652667eaec9b5f
+    name: onboarding
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/onboarding-0.3.0/onboarding-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v2
     appVersion: 0.4.0
     created: "2025-03-16T08:59:32.450508594Z"
     description: A Helm chart for colibrie's onboarding process
@@ -94,4 +104,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-17T08:31:07.969570468Z"
+generated: "2025-03-17T09:40:03.546960416Z"
