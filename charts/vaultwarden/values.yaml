@@ -30,7 +30,7 @@ fullnameOverride: "vaultwarden"
 
 persistence:
   enabled: false
-  storageClass: "gp2"
+  storageClass: "gp3"
   size: 1Gi
 
 # This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
