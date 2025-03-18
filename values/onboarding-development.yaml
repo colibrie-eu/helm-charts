@@ -1,0 +1,18 @@
+image:
+  tag: 0.7.1
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/proxy-body-size: 8m
+  className: nginx
+  hosts:
+    - host: onboarding-development.colibrie.eu
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: onboarding-development.colibrie.eu-tls
+      hosts:
+        - onboarding-development.colibrie.eu
