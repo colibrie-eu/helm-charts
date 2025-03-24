@@ -116,6 +116,16 @@ entries:
   timescaledb:
   - apiVersion: v2
     appVersion: 2.18.1-pg16
+    created: "2025-03-24T20:00:25.779107192Z"
+    description: A Helm chart for TimescaleDB
+    digest: 3ba45d8a91025a6fc332787f66d655afc1db430a58fb6a8020ceadc0922c40f2
+    name: timescaledb
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/timescaledb-0.2.0/timescaledb-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 2.18.1-pg16
     created: "2025-03-24T11:50:43.337073642Z"
     description: A Helm chart for TimescaleDB
     digest: 05e2bc85611f00b474a1ac3b3c5debed2b354c6d4b2ad370a3f5856e5badcb62
@@ -175,4 +185,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-24T11:50:43.3371102Z"
+generated: "2025-03-24T20:00:25.779150383Z"
