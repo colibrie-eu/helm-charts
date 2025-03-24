@@ -62,6 +62,9 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           volumeMounts:
+            - name: certificate
+              mountPath: "/etc/certificate"
+              readOnly: true
             - name: data
               mountPath: "/var/lib/postgresql"
               readOnly: false
@@ -69,6 +72,10 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
       volumes:
+        - name: certificate
+          secret:
+            secretName: {{ template "timescaledb.fullname" . }}-crt
+            defaultMode: 416 # 0640 permissions
       {{- if not .Values.persistence.enabled }}
         - name: data
           emptyDir: {}
