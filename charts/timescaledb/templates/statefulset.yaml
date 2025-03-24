@@ -67,6 +67,7 @@ spec:
               readOnly: true
             - name: data
               mountPath: "/var/lib/postgresql/data"
+              subPath: "postgres"
               readOnly: false
           {{- with .Values.volumeMounts }}
             {{- toYaml . | nindent 12 }}
