@@ -1,0 +1,16 @@
+image:
+  tag: 0.1.0
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  className: nginx
+  hosts:
+    - host: api-development.colibrie.eu
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: api-development.colibrie.eu-tls
+      hosts:
+        - api-development.colibrie.eu
