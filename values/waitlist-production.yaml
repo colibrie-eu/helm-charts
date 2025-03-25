@@ -1,0 +1,17 @@
+image:
+  tag: 0.1.0
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/proxy-body-size: 20m
+  className: nginx
+  hosts:
+    - host: waitlist.colibrie.eu
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: waitlist.colibrie.eu-tls
+      hosts:
+        - waitlist.colibrie.eu
