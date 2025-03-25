@@ -216,4 +216,15 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-25T12:29:31.173775947Z"
+  waitlist:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2025-03-25T14:05:01.646209135Z"
+    description: A Helm chart for colibrie's waitlist
+    digest: aa3ba6c9b23a7e7a93632cf1a7a0c7d2f08111ec8595771274c5f302a500b7b3
+    name: waitlist
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/waitlist-0.1.0/waitlist-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-03-25T14:05:01.646248359Z"
