@@ -15,10 +15,10 @@ image:
 
 env:
   HOST: "127.0.0.1"
-  PORT: "8080"
-  TIMEOUT: "1000"
+  PORT: "\"8080\""
+  TIMEOUT: "\"1000\""
   DB_HOST: "db"
-  DB_PORT: "5432"
+  DB_PORT: "\"5432\""
   DB_USER: "postgres"
   DB_PASS: "example"
   DB_NAME: "backend"
