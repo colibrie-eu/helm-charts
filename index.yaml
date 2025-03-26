@@ -3,6 +3,16 @@ entries:
   backend:
   - apiVersion: v2
     appVersion: 0.5.0
+    created: "2025-03-26T09:24:37.961458433Z"
+    description: A Helm chart for colibrie's backend
+    digest: 4db99805538039cc4b4db0fe725d02c79b2217c6f766ce9ad97d43c91bff89d8
+    name: backend
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/backend-0.1.3/backend-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.5.0
     created: "2025-03-26T09:08:30.181428479Z"
     description: A Helm chart for colibrie's backend
     digest: 57140a81beab4643d4d33c0f8f1e9df3844f0bad18911a86da8717e76f99e80d
@@ -247,4 +257,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/waitlist-0.1.0/waitlist-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-26T09:08:30.181474445Z"
+generated: "2025-03-26T09:24:37.961513215Z"
