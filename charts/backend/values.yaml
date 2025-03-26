@@ -13,6 +13,20 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
+env:
+  HOST: "127.0.0.1"
+  PORT: "8080"
+  TIMEOUT: "1000"
+  DB_HOST: "db"
+  DB_PORT: "5432"
+  DB_USER: "postgres"
+  DB_PASS: "example"
+  DB_NAME: "backend"
+  DB_SSL_MODE: "disable"
+  HASH_SECRET: "SecureHashKey"
+  DB_MIGRATIONS_DIR: "/app/db/migrations/"
+  LOG_LEVEL: "debug"
+
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: [{ name: "regcred" }]
 # This is to override the chart name.
