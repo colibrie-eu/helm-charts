@@ -20,7 +20,6 @@ env:
   APPWRITE_DATABASE_ID: ""
   APPWRITE_LOCALE: ""
   APPWRITE_PROJECT_ID: ""
-  BODY_SIZE_LIMIT: "1M"
   ORIGIN: "http://localhost:3000"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
