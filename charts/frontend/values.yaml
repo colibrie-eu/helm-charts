@@ -13,6 +13,11 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
+backend:
+  service:
+    name: backend
+    port: 8080
+
 env:
   APPWRITE_API_ENDPOINT: ""
   APPWRITE_API_KEY: ""
