@@ -23,7 +23,6 @@ env:
   DB_PASS: "example"
   DB_NAME: "backend"
   DB_SSL_MODE: "disable"
-  HASH_SECRET: "SecureHashKey"
   DB_MIGRATIONS_DIR: "/app/db/migrations/"
   LOG_LEVEL: "debug"
 
