@@ -248,6 +248,16 @@ entries:
   timescaledb:
   - apiVersion: v2
     appVersion: 2.18.1-pg16
+    created: "2025-05-02T11:26:24.239450838Z"
+    description: A Helm chart for TimescaleDB
+    digest: b022ea416b15788299ca78804c587af1b15e11df9e6eafca5022d9069b077aba
+    name: timescaledb
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/timescaledb-0.2.3/timescaledb-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: 2.18.1-pg16
     created: "2025-03-25T09:00:22.762153442Z"
     description: A Helm chart for TimescaleDB
     digest: 4cf5086ff55532e28dd7399c583a25e86df9f7e643123dc553ba91f800d178e0
@@ -358,4 +368,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/waitlist-0.1.0/waitlist-0.1.0.tgz
     version: 0.1.0
-generated: "2025-04-29T07:24:04.091167025Z"
+generated: "2025-05-02T11:26:24.239525006Z"
