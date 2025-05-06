@@ -14,13 +14,3 @@ ingress:
     - secretName: app.colibrie.eu-tls
       hosts:
         - app.colibrie.eu
-  onboarding:
-    hosts:
-      - host: onboarding.colibrie.eu
-        paths:
-          - path: /
-            pathType: ImplementationSpecific
-    tls:
-      - secretName: onboarding.colibrie.eu-tls
-        hosts:
-          - onboarding.colibrie.eu
