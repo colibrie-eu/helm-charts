@@ -46,7 +46,7 @@ spec:
                 name: {{ $.Values.backend.service.name }}
                 port:
                   number: {{ $.Values.backend.service.port }}
-          {{- if eq .Release.Namespace "development" }}
+          {{- if eq $.Release.Namespace "development" }}
           - path: /swagger
             pathType: ImplementationSpecific
             backend:
