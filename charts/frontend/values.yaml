@@ -29,6 +29,11 @@ env:
   APPWRITE_USER_DATA_COLLECTION_ID: ""
   APPWRITE_USER_FEEDBACK_COLLECTION_ID: ""
   ORIGIN: "http://localhost:3000"
+  SMTP_HOST: "smtp.example.com"
+  SMTP_PORT: "587"
+  SMTP_SECURE: "TLS"
+  SMTP_USERNAME: ""
+  SMTP_PASSWORD: ""
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: [{ name: "regcred" }]
