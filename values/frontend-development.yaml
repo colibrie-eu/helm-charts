@@ -1,5 +1,5 @@
 image:
-  tag: sha-99cf4b1
+  tag: sha-f5db36a
 ingress:
   enabled: true
   annotations:
