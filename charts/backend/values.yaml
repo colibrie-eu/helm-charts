@@ -28,7 +28,7 @@ env:
   DB_PASS: "example"
   DB_NAME: "backend"
   DB_SSL_MODE: "disable"
-  DB_MIGRATIONS_DIR: "/app/db/migrations/"
+  DB_MIGRATIONS_DIR: "/app/db/migrations/v2/"
   LOG_LEVEL: "debug"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
