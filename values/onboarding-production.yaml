@@ -6,7 +6,7 @@ ingress:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/server-snippet: |
-      if ($host = "www.onboarding.colibrie.eu") {
+      if ($host = "www.onboarding.colibrie.eu" && $request_uri !~ "^/.well-known/acme-challenge/") {
         return 301 https://onboarding.colibrie.eu$request_uri;
       }
   className: nginx
