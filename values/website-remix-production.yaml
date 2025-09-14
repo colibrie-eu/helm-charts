@@ -1,2 +1,41 @@
 image:
   tag: 0.1.13
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/server-snippet: |
+      if ($host = "www.colibrie.eu") {
+        return 301 https://colibrie.eu$request_uri;
+      }
+      if ($host = "wattwise.at") {
+        return 301 https://colibrie.eu$request_uri;
+      }
+      if ($host = "www.wattwise.at") {
+        return 301 https://colibrie.eu$request_uri;
+      }
+  className: nginx
+  hosts:
+    - host: colibrie.eu
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+    - host: www.colibrie.eu
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+    - host: wattwise.at
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+    - host: www.wattwise.at
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: colibrie.eu-tls
+      hosts:
+        - colibrie.eu
+        - www.colibrie.eu
+        - wattwise.at
+        - www.wattwise.at
