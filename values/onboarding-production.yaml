@@ -5,9 +5,17 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      if ($host = "www.onboarding.colibrie.eu") {
+        return 301 https://onboarding.colibrie.eu$request_uri;
+      }
   className: nginx
   hosts:
     - host: onboarding.colibrie.eu
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+    - host: www.onboarding.colibrie.eu
       paths:
         - path: /
           pathType: ImplementationSpecific
@@ -15,3 +23,4 @@ ingress:
     - secretName: onboarding.colibrie.eu-tls
       hosts:
         - onboarding.colibrie.eu
+        - www.onboarding.colibrie.eu
