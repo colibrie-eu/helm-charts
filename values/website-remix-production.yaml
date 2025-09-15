@@ -5,13 +5,13 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/server-snippet: |
-      if ($host = "www.colibrie.eu" && $request_uri !~ "^/.well-known/acme-challenge/") {
+      if ($host = "www.colibrie.eu") {
         return 301 https://colibrie.eu$request_uri;
       }
-      if ($host = "wattwise.at" && $request_uri !~ "^/.well-known/acme-challenge/") {
+      if ($host = "wattwise.at") {
         return 301 https://colibrie.eu$request_uri;
       }
-      if ($host = "www.wattwise.at" && $request_uri !~ "^/.well-known/acme-challenge/") {
+      if ($host = "www.wattwise.at") {
         return 301 https://colibrie.eu$request_uri;
       }
   className: nginx
