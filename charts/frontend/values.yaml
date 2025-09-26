@@ -39,6 +39,7 @@ env:
   APPWRITE_USER_FEEDBACK_COLLECTION_ID: ""
   NODE_BODY_SIZE_LIMIT: "1048576"
   HERE_API_KEY: ""
+  HOTJAR: "false"
   MAINTENANCE: "false"
   ORIGIN: "http://localhost:3000"
   SMTP_HOST: "smtp.example.com"
