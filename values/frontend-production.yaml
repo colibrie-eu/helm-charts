@@ -1,5 +1,5 @@
 image:
-  tag: 1.9.23
+  tag: 1.9.24
 ingress:
   enabled: true
   annotations:
