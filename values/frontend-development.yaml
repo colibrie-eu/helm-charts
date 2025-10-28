@@ -1,5 +1,5 @@
 image:
-  tag: sha-c270dc3
+  tag: sha-7180752
 ingress:
   enabled: true
   annotations:
