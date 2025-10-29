@@ -83,6 +83,16 @@ entries:
     version: 0.1.0
   frontend:
   - apiVersion: v2
+    appVersion: 1.10.9
+    created: "2025-10-29T14:18:37.1739646Z"
+    description: A Helm chart for colibrie's frontend
+    digest: 96f1f9fbdb22ca645b44931a3d5e3b8f154052706832111866f4fe5c60e510a2
+    name: frontend
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/frontend-0.7.8/frontend-0.7.8.tgz
+    version: 0.7.8
+  - apiVersion: v2
     appVersion: 1.9.9
     created: "2025-09-26T08:03:04.524755471Z"
     description: A Helm chart for colibrie's frontend
@@ -558,4 +568,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/waitlist-0.1.0/waitlist-0.1.0.tgz
     version: 0.1.0
-generated: "2025-10-09T07:21:58.16951753Z"
+generated: "2025-10-29T14:18:37.17415661Z"
