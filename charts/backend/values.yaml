@@ -28,6 +28,7 @@ env:
   DB_PASS: "example"
   DB_NAME: "backend"
   DB_SSL_MODE: "disable"
+  DB_ENCRYPTION_KEY: "aes256key-32characters1234567890"
   DB_MIGRATIONS_DIR: "/app/db/migrations/v2/"
   LOG_LEVEL: "debug"
   MOLLIE_API_KEY: example
