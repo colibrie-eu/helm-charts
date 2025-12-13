@@ -29,7 +29,7 @@ env:
   DB_NAME: "backend"
   DB_SSL_MODE: "disable"
   DB_ENCRYPTION_KEY: "aes256key-32characters1234567890"
-  DB_MIGRATIONS_DIR: "/app/db/migrations/v2/"
+  DB_MIGRATIONS_DIR: "/app/db/migrations/v3/"
   LOG_LEVEL: "debug"
   MOLLIE_API_KEY: example
   MOLLIE_CLIENT_ID: app_Di3kdjFHp8FAAgCfq2BqEqUh
