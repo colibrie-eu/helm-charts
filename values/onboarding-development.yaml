@@ -15,3 +15,10 @@ ingress:
     - secretName: onboarding-development.colibrie.eu-tls
       hosts:
         - onboarding-development.colibrie.eu
+resources:
+  requests:
+    cpu: "10m"
+    memory: "64Mi"
+  limits:
+    cpu: "50m"
+    memory: "128Mi"

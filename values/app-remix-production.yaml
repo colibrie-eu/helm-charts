@@ -1,2 +1,9 @@
 image:
   tag: 0.1.4
+resources:
+  requests:
+    cpu: "10m"
+    memory: "256Mi"
+  limits:
+    cpu: "200m"
+    memory: "512Mi"

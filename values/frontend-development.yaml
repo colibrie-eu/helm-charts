@@ -24,3 +24,10 @@ ingress:
     - secretName: app-development.colibrie.eu-tls
       hosts:
         - app-development.colibrie.eu
+resources:
+  requests:
+    cpu: "10m"
+    memory: "128Mi"
+  limits:
+    cpu: "100m"
+    memory: "256Mi"

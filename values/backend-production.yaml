@@ -2,8 +2,8 @@ image:
   tag: 1.15.7
 resources:
   requests:
-    cpu: 500m
-    memory: 512Mi
+    cpu: "10m"
+    memory: "32Mi"
   limits:
-    cpu: 1
-    memory: 1Gi
+    cpu: "100m"
+    memory: "128Mi"

@@ -53,3 +53,10 @@ ingress:
         - www.colibrie.eu
         - wattwise.at
         - www.wattwise.at
+resources:
+  requests:
+    cpu: "10m"
+    memory: "96Mi"
+  limits:
+    cpu: "100m"
+    memory: "192Mi"

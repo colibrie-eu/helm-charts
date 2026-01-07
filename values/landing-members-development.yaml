@@ -1,2 +1,9 @@
 image:
   tag: sha-1f36b2d
+resources:
+  requests:
+    cpu: "10m"
+    memory: "64Mi"
+  limits:
+    cpu: "50m"
+    memory: "128Mi"
