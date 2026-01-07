@@ -1,6 +1,5 @@
 image:
-  tag: sha-ef2465f
-
+  tag: sha-b54e15e
 resources:
   requests:
     cpu: 500m
