@@ -31,10 +31,6 @@ env:
   DB_ENCRYPTION_KEY: "aes256key-32characters1234567890"
   DB_MIGRATIONS_DIR: "/app/db/migrations/v3/"
   LOG_LEVEL: "debug"
-  MOLLIE_API_KEY: example
-  MOLLIE_CLIENT_ID: app_Di3kdjFHp8FAAgCfq2BqEqUh
-  MOLLIE_CLIENT_SECRET: example
-  MOLLIE_REDIRECT_URL: https://app-development.colibrie.eu/api/v1/communities/payments/oauth/callback
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: [{ name: "regcred" }]
