@@ -51,6 +51,9 @@ env:
   SMTP_USERNAME: ""
   SMTP_PASSWORD: ""
   SMTP_RECEIVER: ""
+  STRIPE: "false"
+  STRIPE_SECRET_KEY: ""
+  PUBLIC_STRIPE_PUBLISHABLE_KEY: ""
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: [{ name: "regcred" }]
