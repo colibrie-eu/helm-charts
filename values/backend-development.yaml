@@ -1,5 +1,5 @@
 image:
-  tag: sha-3789c55
+  tag: sha-a15e4d0
 resources:
   requests:
     cpu: "10m"
