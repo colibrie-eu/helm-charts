@@ -13,6 +13,13 @@ ingress:
     nginx.ingress.kubernetes.io/upstream-keepalive-connections: "32"
     nginx.ingress.kubernetes.io/upstream-keepalive-requests: "100"
     nginx.ingress.kubernetes.io/upstream-keepalive-timeout: "30"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      error_page 502 503 504 = @custom_error;
+
+      location @custom_error {
+        default_type application/json;
+        return 502 '{"success": false, "error": "the upstream service is unavailable"}';
+      }
     cert-manager.io/cluster-issuer: letsencrypt-prod
   className: nginx
   hosts:
