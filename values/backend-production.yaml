@@ -1,5 +1,5 @@
 image:
-  tag: 1.15.8
+  tag: 1.15.9
 resources:
   requests:
     cpu: "10m"
