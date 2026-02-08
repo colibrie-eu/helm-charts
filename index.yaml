@@ -588,6 +588,16 @@ entries:
     version: 0.1.0
   vaultwarden:
   - apiVersion: v2
+    appVersion: 1.35.2-alpine
+    created: "2026-02-08T10:19:56.695764467Z"
+    description: A Helm chart for vaultwarden
+    digest: ce63c5ad10b1475f1b57a992275bbee738a492e390f1595bd867bc54626679b4
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/vaultwarden-0.2.5/vaultwarden-0.2.5.tgz
+    version: 0.2.5
+  - apiVersion: v2
     appVersion: 1.35.0-alpine
     created: "2025-12-28T11:26:45.893086302Z"
     description: A Helm chart for vaultwarden
@@ -668,4 +678,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/waitlist-0.1.0/waitlist-0.1.0.tgz
     version: 0.1.0
-generated: "2026-01-15T13:04:45.382914594Z"
+generated: "2026-02-08T10:19:56.695914395Z"
