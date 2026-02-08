@@ -1,0 +1,40 @@
+image:
+  tag: 1.13.5
+ingress:
+  enabled: true
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "32k"
+    nginx.ingress.kubernetes.io/proxy-buffers-number: "16"
+    nginx.ingress.kubernetes.io/proxy-busy-buffers-size: "128k"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "30"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "30"
+    nginx.ingress.kubernetes.io/upstream-keepalive-connections: "32"
+    nginx.ingress.kubernetes.io/upstream-keepalive-requests: "100"
+    nginx.ingress.kubernetes.io/upstream-keepalive-timeout: "30"
+    nginx.ingress.kubernetes.io/server-snippet: |
+      error_page 502 503 504 = @custom_error;
+
+      location @custom_error {
+        default_type application/json;
+        return 502 '{"success": false, "error": "the upstream service is unavailable"}';
+      }
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  className: nginx
+  hosts:
+    - host: app-staging.colibrie.eu
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls:
+    - secretName: app-staging.colibrie.eu-tls
+      hosts:
+        - app-staging.colibrie.eu
+resources:
+  requests:
+    cpu: "10m"
+    memory: "128Mi"
+  limits:
+    cpu: "100m"
+    memory: "256Mi"
