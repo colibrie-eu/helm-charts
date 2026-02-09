@@ -30,10 +30,6 @@ ingress:
       }
   className: nginx
   hosts:
-    - host: colibrie.eu
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
     - host: www.colibrie.eu
       paths:
         - path: /
@@ -49,7 +45,6 @@ ingress:
   tls:
     - secretName: colibrie.eu-tls
       hosts:
-        - colibrie.eu
         - www.colibrie.eu
         - wattwise.at
         - www.wattwise.at
