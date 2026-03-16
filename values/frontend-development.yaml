@@ -1,5 +1,5 @@
 image:
-  tag: dev-64bb42d
+  tag: sha-64bb42d
 ingress:
   enabled: true
   annotations:
