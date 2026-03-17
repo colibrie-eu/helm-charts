@@ -1,5 +1,5 @@
 image:
-  tag: sha-ded29c5
+  tag: main
 ingress:
   enabled: true
   annotations:
@@ -16,7 +16,7 @@ ingress:
       hosts:
         - onboarding-staging.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-03-17T07:00:00Z"
+  deploy-timestamp: "2026-03-17T07:25:43Z"
 resources:
   requests:
     cpu: "10m"
