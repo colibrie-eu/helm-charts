@@ -31,6 +31,8 @@ ingress:
     - secretName: app-development.colibrie.eu-tls
       hosts:
         - app-development.colibrie.eu
+podAnnotations:
+  deploy-timestamp: "2026-03-17T07:00:00Z"
 resources:
   requests:
     cpu: "10m"
