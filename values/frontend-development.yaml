@@ -1,5 +1,5 @@
 image:
-  tag: sha-64bb42d
+  tag: dev
 ingress:
   enabled: true
   annotations:
@@ -32,7 +32,7 @@ ingress:
       hosts:
         - app-development.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-03-17T07:00:00Z"
+  deploy-timestamp: "2026-03-17T07:35:06Z"
 resources:
   requests:
     cpu: "10m"
