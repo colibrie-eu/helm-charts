@@ -1,5 +1,5 @@
 image:
-  tag: sha-df682e3
+  tag: dev
 livenessProbe:
   httpGet:
     path: /
@@ -9,7 +9,7 @@ livenessProbe:
   timeoutSeconds: 5
   failureThreshold: 5
 podAnnotations:
-  deploy-timestamp: "2026-03-17T07:00:00Z"
+  deploy-timestamp: "2026-04-07T05:57:32Z"
 readinessProbe:
   httpGet:
     path: /
