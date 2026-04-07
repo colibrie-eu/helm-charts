@@ -32,7 +32,7 @@ ingress:
       hosts:
         - app-development.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-04-07T12:02:59Z"
+  deploy-timestamp: "2026-04-07T14:02:32Z"
 resources:
   requests:
     cpu: "10m"
