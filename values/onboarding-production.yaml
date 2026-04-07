@@ -1,5 +1,5 @@
 image:
-  tag: 1.2.17
+  tag: 1.2.18
 ingress:
   enabled: true
   annotations:
@@ -32,7 +32,7 @@ ingress:
         - onboarding.colibrie.eu
         - www.onboarding.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-03-19T19:05:19Z"
+  deploy-timestamp: "2026-04-07T17:36:50Z"
 resources:
   requests:
     cpu: "10m"
