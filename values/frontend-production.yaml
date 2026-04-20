@@ -1,5 +1,5 @@
 image:
-  tag: 1.16.8
+  tag: 1.16.7
 ingress:
   enabled: true
   annotations:
@@ -32,7 +32,7 @@ ingress:
       hosts:
         - app.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-04-20T13:37:00Z"
+  deploy-timestamp: "2026-04-10T14:26:43Z"
 resources:
   requests:
     cpu: "10m"
