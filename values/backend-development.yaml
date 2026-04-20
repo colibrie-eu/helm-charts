@@ -1,7 +1,7 @@
 image:
   tag: dev
 podAnnotations:
-  deploy-timestamp: "2026-04-20T15:47:13Z"
+  deploy-timestamp: "2026-04-20T15:47:53Z"
 resources:
   requests:
     cpu: "10m"
