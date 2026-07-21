@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/colibrie-eu/eeg-ebergassing-website
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   tag: dev
 podAnnotations:
   deploy-timestamp: "2026-07-21T12:00:00Z"
