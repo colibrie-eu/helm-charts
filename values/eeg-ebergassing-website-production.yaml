@@ -1,21 +1,16 @@
 replicaCount: 2
-
 image:
   repository: ghcr.io/colibrie-eu/eeg-ebergassing-website
   pullPolicy: IfNotPresent
   tag: 1.0.0
-
 serviceAccount:
   automount: false
-
 podAnnotations:
-  deploy-timestamp: "2026-07-21T12:00:00Z"
-
+  deploy-timestamp: "2026-07-21T12:45:07Z"
 podSecurityContext:
   runAsNonRoot: true
   seccompProfile:
     type: RuntimeDefault
-
 securityContext:
   allowPrivilegeEscalation: false
   capabilities:
@@ -24,7 +19,6 @@ securityContext:
   readOnlyRootFilesystem: true
   runAsNonRoot: true
   runAsUser: 101
-
 livenessProbe:
   httpGet:
     path: /healthz
@@ -33,7 +27,6 @@ livenessProbe:
   periodSeconds: 10
   timeoutSeconds: 3
   failureThreshold: 3
-
 readinessProbe:
   httpGet:
     path: /healthz
@@ -42,7 +35,6 @@ readinessProbe:
   periodSeconds: 5
   timeoutSeconds: 3
   failureThreshold: 3
-
 resources:
   requests:
     cpu: "10m"
@@ -50,13 +42,11 @@ resources:
   limits:
     cpu: "100m"
     memory: "128Mi"
-
 volumes:
   - name: nginx-tmp
     emptyDir:
       medium: Memory
       sizeLimit: 16Mi
-
 volumeMounts:
   - name: nginx-tmp
     mountPath: /tmp
