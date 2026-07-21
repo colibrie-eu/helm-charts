@@ -3,7 +3,7 @@ image:
   pullPolicy: Always
   tag: dev
 podAnnotations:
-  deploy-timestamp: "2026-07-21T12:00:00Z"
+  deploy-timestamp: "2026-07-21T12:41:41Z"
 resources:
   requests:
     cpu: "10m"
