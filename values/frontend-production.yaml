@@ -1,5 +1,5 @@
 image:
-  tag: 1.16.19
+  tag: 1.16.20
 env:
   APPWRITE_SEPA_MANDATES_COLLECTION_ID: "sepa_mandates"
 ingress:
@@ -34,7 +34,7 @@ ingress:
       hosts:
         - app.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-07-10T16:42:51Z"
+  deploy-timestamp: "2026-07-23T21:55:39Z"
 resources:
   requests:
     cpu: "10m"
