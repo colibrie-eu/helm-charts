@@ -1,5 +1,7 @@
 image:
   tag: main
+env:
+  APPWRITE_SEPA_MANDATES_COLLECTION_ID: "sepa_mandates"
 ingress:
   enabled: true
   annotations:
