@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/component: auth-proxy
 spec:
   ports:
-    - name: http
+    - name: upstream
       port: {{ .Values.authProxy.upstreamPort }}
       protocol: TCP
       targetPort: {{ .Values.authProxy.upstreamPort }}
@@ -26,7 +26,7 @@ endpoints:
   - addresses:
       - {{ .Values.authProxy.upstreamAddress | quote }}
 ports:
-  - name: http
+  - name: upstream
     port: {{ .Values.authProxy.upstreamPort }}
     protocol: TCP
 ---
@@ -57,5 +57,5 @@ spec:
               service:
                 name: {{ include "frontend.fullname" . }}-auth-proxy
                 port:
-                  name: http
+                  name: upstream
 {{- end }}
