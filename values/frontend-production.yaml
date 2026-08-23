@@ -2,6 +2,20 @@ image:
   tag: 1.16.23
 env:
   APPWRITE_SEPA_MANDATES_COLLECTION_ID: "sepa_mandates"
+authProxy:
+  enabled: true
+  host: auth.colibrie.eu
+  upstreamAddress: 91.99.97.36
+  upstreamPort: 80
+  ingress:
+    className: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-prod
+      nginx.ingress.kubernetes.io/proxy-body-size: "0"
+      nginx.ingress.kubernetes.io/proxy-connect-timeout: "30"
+      nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+      nginx.ingress.kubernetes.io/proxy-send-timeout: "60"
+    tlsSecretName: auth.colibrie.eu-tls
 ingress:
   enabled: true
   annotations:

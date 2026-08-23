@@ -18,6 +18,18 @@ backend:
     name: backend
     port: 8080
 
+# Optional TLS-terminating proxy for the external Appwrite endpoint. This keeps
+# Appwrite's public hostname stable while cert-manager owns certificate renewal.
+authProxy:
+  enabled: false
+  host: ""
+  upstreamAddress: ""
+  upstreamPort: 80
+  ingress:
+    className: nginx
+    annotations: {}
+    tlsSecretName: ""
+
 env:
   API_BASE_URL: "/api/v1"
   APPWRITE_API_ENDPOINT: ""
