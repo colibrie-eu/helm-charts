@@ -25,6 +25,7 @@ addressType: IPv4
 endpoints:
   - addresses:
       - {{ .Values.authProxy.upstreamAddress | quote }}
+    conditions: {}
 ports:
   - name: upstream
     port: {{ .Values.authProxy.upstreamPort }}
