@@ -16,7 +16,7 @@ ingress:
       hosts:
         - onboarding-staging.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-08-26T16:38:23Z"
+  deploy-timestamp: "2026-08-26T16:45:02Z"
 resources:
   requests:
     cpu: "10m"
