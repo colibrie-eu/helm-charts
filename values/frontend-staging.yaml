@@ -34,7 +34,7 @@ ingress:
       hosts:
         - app-staging.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-09-14T11:49:13Z"
+  deploy-timestamp: "2026-09-16T14:15:22Z"
 resources:
   requests:
     cpu: "10m"
