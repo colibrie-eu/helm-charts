@@ -33,6 +33,8 @@ authProxy:
 authAttemptCleanup:
   enabled: false
   schedule: "*/5 * * * *"
+  apiKeySecretName: ""
+  apiKeySecretKey: "api-key"
 
 env:
   API_BASE_URL: "/api/v1"
