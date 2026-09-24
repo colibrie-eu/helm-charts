@@ -1,0 +1,50 @@
+{{- if .Values.registrationOtpCleanup.enabled }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "onboarding.fullname" . }}-registration-otp-cleanup
+  labels:
+    {{- include "onboarding.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.registrationOtpCleanup.schedule | quote }}
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 180
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      activeDeadlineSeconds: 900
+      ttlSecondsAfterFinished: 86400
+      template:
+        spec:
+          automountServiceAccountToken: false
+          restartPolicy: Never
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          containers:
+            - name: cleanup
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              command: ["node", "scripts/registration-otp-slots.mjs", "cleanup", "--apply"]
+              env:
+                - name: APPWRITE_API_ENDPOINT
+                  value: {{ required "onboarding cleanup requires APPWRITE_API_ENDPOINT" .Values.env.APPWRITE_API_ENDPOINT | quote }}
+                - name: APPWRITE_API_KEY
+                  value: {{ required "onboarding cleanup requires APPWRITE_API_KEY" .Values.env.APPWRITE_API_KEY | quote }}
+                - name: APPWRITE_PROJECT_ID
+                  value: {{ required "onboarding cleanup requires APPWRITE_PROJECT_ID" .Values.env.APPWRITE_PROJECT_ID | quote }}
+                - name: APPWRITE_DATABASE_ID
+                  value: {{ required "onboarding cleanup requires APPWRITE_DATABASE_ID" .Values.env.APPWRITE_DATABASE_ID | quote }}
+                - name: APPWRITE_REGISTRATION_OTP_ATTEMPTS_COLLECTION_ID
+                  value: {{ required "onboarding cleanup requires APPWRITE_REGISTRATION_OTP_ATTEMPTS_COLLECTION_ID" .Values.env.APPWRITE_REGISTRATION_OTP_ATTEMPTS_COLLECTION_ID | quote }}
+              resources:
+                requests:
+                  cpu: 20m
+                  memory: 128Mi
+                limits:
+                  cpu: 200m
+                  memory: 256Mi
+{{- end }}

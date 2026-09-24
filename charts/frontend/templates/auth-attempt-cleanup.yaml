@@ -1,0 +1,50 @@
+{{- if .Values.authAttemptCleanup.enabled }}
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ include "frontend.fullname" . }}-auth-attempt-cleanup
+  labels:
+    {{- include "frontend.labels" . | nindent 4 }}
+spec:
+  schedule: {{ .Values.authAttemptCleanup.schedule | quote }}
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 180
+  successfulJobsHistoryLimit: 1
+  failedJobsHistoryLimit: 2
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      activeDeadlineSeconds: 900
+      ttlSecondsAfterFinished: 86400
+      template:
+        spec:
+          automountServiceAccountToken: false
+          restartPolicy: Never
+          {{- with .Values.imagePullSecrets }}
+          imagePullSecrets:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          containers:
+            - name: cleanup
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+              imagePullPolicy: {{ .Values.image.pullPolicy }}
+              command: ["node", "scripts/setup-auth-attempts.mjs", "--apply-cleanup"]
+              env:
+                - name: APPWRITE_API_ENDPOINT
+                  value: {{ required "frontend cleanup requires APPWRITE_API_ENDPOINT" .Values.env.APPWRITE_API_ENDPOINT | quote }}
+                - name: APPWRITE_API_KEY
+                  value: {{ required "frontend cleanup requires APPWRITE_API_KEY" .Values.env.APPWRITE_API_KEY | quote }}
+                - name: APPWRITE_PROJECT_ID
+                  value: {{ required "frontend cleanup requires APPWRITE_PROJECT_ID" .Values.env.APPWRITE_PROJECT_ID | quote }}
+                - name: APPWRITE_DATABASE_ID
+                  value: {{ required "frontend cleanup requires APPWRITE_DATABASE_ID" .Values.env.APPWRITE_DATABASE_ID | quote }}
+                - name: APPWRITE_AUTH_ATTEMPTS_COLLECTION_ID
+                  value: {{ required "frontend cleanup requires APPWRITE_AUTH_ATTEMPTS_COLLECTION_ID" .Values.env.APPWRITE_AUTH_ATTEMPTS_COLLECTION_ID | quote }}
+              resources:
+                requests:
+                  cpu: 20m
+                  memory: 128Mi
+                limits:
+                  cpu: 200m
+                  memory: 256Mi
+{{- end }}
