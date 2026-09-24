@@ -124,6 +124,16 @@ entries:
   frontend:
   - apiVersion: v2
     appVersion: 1.15.2
+    created: "2026-09-24T23:31:58.761677825Z"
+    description: A Helm chart for colibrie's frontend
+    digest: ebc8182fa59eecfe9841fefeb8bdbf56a5f1fde7db86cb2ec9e73c8838b8fc08
+    name: frontend
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/frontend-0.7.20/frontend-0.7.20.tgz
+    version: 0.7.20
+  - apiVersion: v2
+    appVersion: 1.15.2
     created: "2026-08-23T15:24:34.38083073Z"
     description: A Helm chart for colibrie's frontend
     digest: 702c02a6e894d602d1383cafeda252ce7d5917b6c2b503d8191c0f922c1d03c5
@@ -466,6 +476,16 @@ entries:
   onboarding:
   - apiVersion: v2
     appVersion: 1.2.17
+    created: "2026-09-24T23:31:59.062749823Z"
+    description: A Helm chart for colibrie's onboarding process
+    digest: d2a7b151b33ccbb3a1255a88477284a5ba73fcfee1e4d879c69becb03139e6ff
+    name: onboarding
+    type: application
+    urls:
+    - https://github.com/colibrie-eu/helm-charts/releases/download/onboarding-0.5.6/onboarding-0.5.6.tgz
+    version: 0.5.6
+  - apiVersion: v2
+    appVersion: 1.2.17
     created: "2026-03-19T19:02:29.545136045Z"
     description: A Helm chart for colibrie's onboarding process
     digest: f5367c487489cb9aece6ba4591eab3561d023788bd3a08dc6ae44a8d4600974d
@@ -758,4 +778,4 @@ entries:
     urls:
     - https://github.com/colibrie-eu/helm-charts/releases/download/waitlist-0.1.0/waitlist-0.1.0.tgz
     version: 0.1.0
-generated: "2026-08-23T15:24:34.381075743Z"
+generated: "2026-09-24T23:31:59.063199849Z"
