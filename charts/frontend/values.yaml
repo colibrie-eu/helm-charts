@@ -30,6 +30,10 @@ authProxy:
     annotations: {}
     tlsSecretName: ""
 
+authAttemptCleanup:
+  enabled: false
+  schedule: "*/5 * * * *"
+
 env:
   API_BASE_URL: "/api/v1"
   APPWRITE_API_ENDPOINT: ""
