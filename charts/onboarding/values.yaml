@@ -16,6 +16,8 @@ image:
 registrationOtpCleanup:
   enabled: false
   schedule: "*/15 * * * *"
+  apiKeySecretName: ""
+  apiKeySecretKey: "api-key"
 
 env:
   APPWRITE_API_ENDPOINT: ""

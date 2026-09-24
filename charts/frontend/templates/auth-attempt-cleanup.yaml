@@ -33,7 +33,10 @@ spec:
                 - name: APPWRITE_API_ENDPOINT
                   value: {{ required "frontend cleanup requires APPWRITE_API_ENDPOINT" .Values.env.APPWRITE_API_ENDPOINT | quote }}
                 - name: APPWRITE_API_KEY
-                  value: {{ required "frontend cleanup requires APPWRITE_API_KEY" .Values.env.APPWRITE_API_KEY | quote }}
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ required "frontend cleanup requires apiKeySecretName" .Values.authAttemptCleanup.apiKeySecretName | quote }}
+                      key: {{ .Values.authAttemptCleanup.apiKeySecretKey | quote }}
                 - name: APPWRITE_PROJECT_ID
                   value: {{ required "frontend cleanup requires APPWRITE_PROJECT_ID" .Values.env.APPWRITE_PROJECT_ID | quote }}
                 - name: APPWRITE_DATABASE_ID

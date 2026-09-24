@@ -2,6 +2,9 @@ image:
   tag: main
 env:
   APPWRITE_REGISTRATION_OTP_ATTEMPTS_COLLECTION_ID: registration_otp_attempts
+registrationOtpCleanup:
+  enabled: true
+  apiKeySecretName: onboarding-otp-cleanup
 ingress:
   enabled: true
   annotations:

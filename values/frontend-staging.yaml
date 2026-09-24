@@ -3,6 +3,9 @@ image:
 env:
   APPWRITE_AUTH_ATTEMPTS_COLLECTION_ID: frontend_auth_attempts
   APPWRITE_SEPA_MANDATES_COLLECTION_ID: "sepa_mandates"
+authAttemptCleanup:
+  enabled: true
+  apiKeySecretName: frontend-auth-cleanup
 ingress:
   enabled: true
   annotations:
