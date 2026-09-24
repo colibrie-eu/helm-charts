@@ -1,5 +1,5 @@
 image:
-  tag: 1.16.28
+  tag: 1.16.29
 env:
   APPWRITE_SEPA_MANDATES_COLLECTION_ID: "sepa_mandates"
 authProxy:
@@ -52,7 +52,7 @@ ingress:
       hosts:
         - app.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-09-16T14:20:22Z"
+  deploy-timestamp: "2026-09-24T14:59:09Z"
 resources:
   requests:
     cpu: "10m"
