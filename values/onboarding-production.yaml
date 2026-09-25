@@ -1,5 +1,5 @@
 image:
-  tag: 1.2.23
+  tag: 1.2.24
 env:
   APPWRITE_REGISTRATION_OTP_ATTEMPTS_COLLECTION_ID: registration_otp_attempts
 ingress:
@@ -34,7 +34,7 @@ ingress:
         - onboarding.colibrie.eu
         - www.onboarding.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-08-26T16:41:24Z"
+  deploy-timestamp: "2026-09-25T12:19:06Z"
 resources:
   requests:
     cpu: "10m"
