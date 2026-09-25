@@ -1,6 +1,7 @@
 image:
   tag: 1.16.31
 env:
+  APPWRITE_AUTH_ATTEMPTS_COLLECTION_ID: frontend_auth_attempts
   APPWRITE_SEPA_MANDATES_COLLECTION_ID: "sepa_mandates"
 authProxy:
   enabled: true
