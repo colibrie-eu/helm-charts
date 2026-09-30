@@ -56,12 +56,6 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.sentry.existingSecret | quote }}
                   key: {{ .Values.sentry.dsnKey | quote }}
-            {{- if .Values.sentry.diagnosticsUntil }}
-            - name: SENTRY_DIAGNOSTICS_UNTIL
-              value: {{ .Values.sentry.diagnosticsUntil | quote }}
-            - name: PUBLIC_SENTRY_DIAGNOSTICS_UNTIL
-              value: {{ .Values.sentry.diagnosticsUntil | quote }}
-            {{- end }}
             {{- end }}
           ports:
             - name: http
