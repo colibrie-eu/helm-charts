@@ -6,6 +6,11 @@ the chart's `sentry.existingSecret`. Both `SENTRY_DSN` and `PUBLIC_SENTRY_DSN`
 refer to that key. The SDK must have its own collection limits and event
 sanitization; these chart references only supply the ingestion endpoint.
 
+The Frontend also receives `SENTRY_ENABLED=true` and
+`PUBLIC_SENTRY_ENABLED=true` when the chart's Sentry block is enabled, as
+required by its SDK configuration. Disabling the block removes both activation
+flags and DSN references. Onboarding initializes when its DSN is present.
+
 The prepared Staging/Production values use `frontend-sentry` and
 `onboarding-sentry`. Create these Secrets before changing the Argo chart pins
 to frontend `0.7.21` and onboarding `0.5.7`. The chart refuses enabled Sentry

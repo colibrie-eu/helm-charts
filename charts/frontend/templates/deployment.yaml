@@ -46,6 +46,10 @@ spec:
               value: {{ $value }}
             {{- end }}
             {{- if .Values.sentry.enabled }}
+            - name: SENTRY_ENABLED
+              value: "true"
+            - name: PUBLIC_SENTRY_ENABLED
+              value: "true"
             - name: SENTRY_DSN
               valueFrom:
                 secretKeyRef:
