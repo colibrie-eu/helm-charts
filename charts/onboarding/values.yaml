@@ -23,6 +23,7 @@ sentry:
   enabled: false
   existingSecret: ""
   dsnKey: "dsn"
+  diagnosticsUntil: ""
 
 env:
   APPWRITE_API_ENDPOINT: ""

@@ -15,6 +15,12 @@ The applications supply their environment and release from the image's version
 metadata. Source-map upload credentials are build-only secrets managed by the
 shared Docker workflow, never runtime Kubernetes secrets.
 
+`sentry.diagnosticsUntil` optionally supplies the same ISO deadline to server and
+browser diagnostics. The prepared values set `2026-10-21T23:59:59Z`, matching the
+requested three-week transition. After that deadline, applications keep
+reporting errors but remove the temporary richer user/request context. Changing
+the deadline is a runtime configuration change and does not require an image rebuild.
+
 Activate Staging first and verify an isolated technical event and its alert.
 Then activate Production and read back image readiness, Secret references and a
 person-free technical event. Customer login and registration actions are not

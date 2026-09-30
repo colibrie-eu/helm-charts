@@ -1,6 +1,7 @@
 sentry:
   enabled: true
   existingSecret: frontend-sentry
+  diagnosticsUntil: "2026-10-21T23:59:59Z"
 
 image:
   tag: 1.16.33
