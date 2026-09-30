@@ -45,6 +45,18 @@ spec:
             - name: {{ $name }}
               value: {{ $value }}
             {{- end }}
+            {{- if .Values.sentry.enabled }}
+            - name: SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ required "sentry.existingSecret is required when Sentry is enabled" .Values.sentry.existingSecret | quote }}
+                  key: {{ required "sentry.dsnKey is required when Sentry is enabled" .Values.sentry.dsnKey | quote }}
+            - name: PUBLIC_SENTRY_DSN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.sentry.existingSecret | quote }}
+                  key: {{ .Values.sentry.dsnKey | quote }}
+            {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

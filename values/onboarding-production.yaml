@@ -1,3 +1,7 @@
+sentry:
+  enabled: true
+  existingSecret: onboarding-sentry
+
 image:
   tag: 1.2.24
 env:

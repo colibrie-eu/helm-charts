@@ -1,3 +1,7 @@
+sentry:
+  enabled: true
+  existingSecret: frontend-sentry
+
 image:
   tag: 1.16.33
 env:
