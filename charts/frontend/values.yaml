@@ -36,6 +36,11 @@ authAttemptCleanup:
   apiKeySecretName: ""
   apiKeySecretKey: "api-key"
 
+sentry:
+  enabled: false
+  existingSecret: ""
+  dsnKey: "dsn"
+
 env:
   API_BASE_URL: "/api/v1"
   APPWRITE_API_ENDPOINT: ""

@@ -19,6 +19,11 @@ registrationOtpCleanup:
   apiKeySecretName: ""
   apiKeySecretKey: "api-key"
 
+sentry:
+  enabled: false
+  existingSecret: ""
+  dsnKey: "dsn"
+
 env:
   APPWRITE_API_ENDPOINT: ""
   APPWRITE_API_KEY: ""
