@@ -1,7 +1,6 @@
 sentry:
   enabled: true
   existingSecret: onboarding-sentry
-
 image:
   tag: main
 env:
@@ -25,7 +24,7 @@ ingress:
       hosts:
         - onboarding-staging.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-09-24T23:08:48Z"
+  deploy-timestamp: "2026-09-30T22:46:02Z"
 resources:
   requests:
     cpu: "10m"
