@@ -1,7 +1,6 @@
 sentry:
   enabled: true
   existingSecret: frontend-sentry
-
 image:
   tag: main
 env:
@@ -42,7 +41,7 @@ ingress:
       hosts:
         - app-staging.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-09-30T20:25:29Z"
+  deploy-timestamp: "2026-10-01T11:16:56Z"
 resources:
   requests:
     cpu: "10m"
