@@ -2,7 +2,7 @@ sentry:
   enabled: true
   existingSecret: frontend-sentry
 image:
-  tag: 1.16.35
+  tag: 1.16.36
 env:
   APPWRITE_AUTH_ATTEMPTS_COLLECTION_ID: frontend_auth_attempts
   APPWRITE_SEPA_MANDATES_COLLECTION_ID: "sepa_mandates"
@@ -59,7 +59,7 @@ ingress:
       hosts:
         - app.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-10-02T16:16:01Z"
+  deploy-timestamp: "2026-10-05T14:09:02Z"
 resources:
   requests:
     cpu: "10m"
