@@ -145,3 +145,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Runtime gate. Enable only for the authorised legacy cutover.
+legacyAccessLock:
+  enabled: false
