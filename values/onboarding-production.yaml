@@ -2,7 +2,7 @@ sentry:
   enabled: true
   existingSecret: onboarding-sentry
 image:
-  tag: 1.2.27
+  tag: 1.2.28
 env:
   APPWRITE_REGISTRATION_OTP_ATTEMPTS_COLLECTION_ID: registration_otp_attempts
 registrationOtpCleanup:
@@ -40,7 +40,7 @@ ingress:
         - onboarding.colibrie.eu
         - www.onboarding.colibrie.eu
 podAnnotations:
-  deploy-timestamp: "2026-10-15T17:22:53Z"
+  deploy-timestamp: "2026-10-20T11:59:08Z"
 resources:
   requests:
     cpu: "10m"
