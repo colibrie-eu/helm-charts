@@ -26,6 +26,11 @@ authProxy:
       nginx.ingress.kubernetes.io/proxy-ssl-name: auth.colibrie.eu
       nginx.ingress.kubernetes.io/proxy-ssl-server-name: "on"
       nginx.ingress.kubernetes.io/proxy-ssl-verify: "off"
+      # PHP2Shell (CVE-2026-109618/-109619): reject multipart uploads to the
+      # self-hosted Appwrite until it runs a patched PHP. Colibrie 2.0 and the
+      # legacy-upload archive only read from Appwrite.
+      nginx.ingress.kubernetes.io/configuration-snippet: |-
+        if ($http_content_type ~* "multipart/form-data") { return 403; }
     tlsSecretName: auth.colibrie.eu-tls
 ingress:
   enabled: true
