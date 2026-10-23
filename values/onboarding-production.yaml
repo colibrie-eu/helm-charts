@@ -13,7 +13,7 @@ ingress:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
-    nginx.ingress.kubernetes.io/server-snippet: |
+    nginx.ingress.kubernetes.io/server-snippet: |-
       set $redirect 0;
       if ($host = "www.onboarding.colibrie.eu") {
         set $redirect 1;
@@ -23,6 +23,38 @@ ingress:
       }
       if ($redirect = 1) {
         return 301 https://onboarding.colibrie.eu$request_uri;
+      }
+      set $legacy_bg "";
+      if ($uri ~* "^/baumgarten/?$") {
+        set $legacy_bg "B";
+      }
+      if ($uri = "/") {
+        set $legacy_bg "${legacy_bg}R";
+      }
+      if ($arg_eeg ~* "^baumgarten$") {
+        set $legacy_bg "${legacy_bg}E";
+      }
+      if ($legacy_bg = "B") {
+        return 307 "https://onboarding.colibrie.eu/baumgarten-auswahl";
+      }
+      if ($legacy_bg = "RE") {
+        return 307 "https://onboarding.colibrie.eu/baumgarten-auswahl";
+      }
+      set $legacy_eeg "";
+      if ($uri = "/") {
+        set $legacy_eeg "R";
+      }
+      if ($arg_eeg ~ "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,99}$") {
+        set $legacy_eeg "${legacy_eeg}E";
+      }
+      if ($legacy_eeg = "RE") {
+        return 307 "https://app.colibrie.eu/altbeitritt/$arg_eeg#";
+      }
+      location = /baumgarten-auswahl {
+        default_type "text/html; charset=utf-8";
+        add_header Cache-Control "no-store" always;
+        add_header X-Robots-Tag "noindex" always;
+        return 200 '<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Energiegemeinschaft wählen</title><style>body{margin:0;background:#FBFAF4;color:#081717;font-family:"Haffer Semi Mono",ui-monospace,"SF Mono",monospace}main{max-width:560px;margin:0 auto;padding:48px 20px}img{height:28px;width:auto;display:block}h1{font-family:"PP Editorial New","Cormorant Garamond","Iowan Old Style",serif;font-weight:400;font-size:32px;line-height:1.2;margin:32px 0 12px}p{color:#3A4F4F;font-size:15px;line-height:1.5;margin:0 0 24px}a.k{display:block;background:#FFFFFF;border:1px solid rgba(8,23,23,0.06);border-radius:12px;padding:16px 18px;margin:0 0 12px;color:#081717;text-decoration:none;font-size:16px}a.k:hover{border-color:#537E4B}a.k:focus-visible{outline:2px solid #537E4B;outline-offset:2px}a.k span{display:block;color:#406B38;font-size:13px;margin-top:4px}</style></head><body><main><img src="https://app.colibrie.eu/assets/colibrie-logo.svg" alt="Colibrie"><h1>Wähle deine Energiegemeinschaft</h1><p>Über diesen Link erreichst du drei Energiegemeinschaften. Wähle die Gemeinschaft, der du beitreten möchtest.</p><a class="k" href="https://app.colibrie.eu/beitritt/op-18">Linzerstraße 280, 1140 Wien<span>Zur Anmeldung</span></a><a class="k" href="https://app.colibrie.eu/beitritt/op-23">SmartCity Baumgarten Solar PEN12<span>Zur Anmeldung</span></a><a class="k" href="https://app.colibrie.eu/beitritt/op-44">SmartCity Baumgarten Solar PEN11<span>Zur Anmeldung</span></a></main></body></html>';
       }
   className: nginx
   hosts:
